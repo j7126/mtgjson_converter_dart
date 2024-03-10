@@ -31,7 +31,7 @@ class MagicLifeWheelJsonCardSet {
   Map<String, dynamic> toJson() => _$MagicLifeWheelJsonCardSetToJson(this);
 
   static RegExp cardSearchStringFilterEmptyRegex = RegExp('[\']');
-  static RegExp cardSearchStringFilterSpaceRegex = RegExp('[-, ]+');
+  static RegExp cardSearchStringFilterSpaceRegex = RegExp('[-,. ]+');
 
   static String filterStringForSearch(String str) {
     str = str.toLowerCase().normalize();
