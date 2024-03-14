@@ -17,3 +17,15 @@ Generate the json format used by https://github.com/j7126/magic-life-wheel
 **Command:**
 
 `dart run mtgjson_converter_dart AllPrintings magic_life_wheel_all_cards`
+
+### Magic Deck Manager
+
+Generate the json format used by https://github.com/j7126/magic-deck-manager
+
+**Required Files:**
+
+ - AllPrintings.json
+
+**Command:**
+
+`dart run mtgjson_converter_dart AllPrintings magic_deck_manager_all_cards`

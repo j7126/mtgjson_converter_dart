@@ -10,6 +10,9 @@ dependencies:
   json_annotation: ^4.8.1
   string_normalizer: ^0.2.2
   collection: ^1.18.0
+  path: ^1.8.3
+  sqflite: ^2.3.0
+  sqflite_common_ffi: ^2.3.0+2
 
 dev_dependencies:
   lints: ^2.1.0

@@ -10,6 +10,9 @@ void main(List<String> arguments) {
       else if (arguments[1] == "magic_life_wheel_all_cards") {
         return all_printings.magicLifeWheelAllCards();
       }
+      else if (arguments[1] == "magic_deck_manager_all_cards") {
+        return all_printings.magicDeckManagerAllCards();
+      }
     }
   }
 
