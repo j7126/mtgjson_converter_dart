@@ -6,6 +6,7 @@ import 'package:mtgjson_converter_dart/mtgjson/inputDataModel/card_set.dart';
 import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_deck_manager/card_set.dart';
 import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_deck_manager/searchable_all_set_cards.dart';
 import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_deck_manager/searchable_card_set.dart';
+import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_deck_manager/set.dart';
 import 'package:path/path.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
@@ -81,6 +82,18 @@ void magicDeckManagerAllCards(AllSets allSets) async {
           scryfallIllustrationId TEXT
         )""",
       );
+      await db.execute(
+        """CREATE TABLE sets(
+          baseSetSize INTEGER,
+          code TEXT,
+          isFoilOnly INTEGER,
+          keyruneCode TEXT,
+          name TEXT,
+          releaseDate TEXT,
+          totalSetSize INTEGER,
+          type TEXT
+        )""",
+      );
     },
     version: 1,
   );
@@ -107,6 +120,12 @@ void magicDeckManagerAllCards(AllSets allSets) async {
       "scryfallOracleId": card.identifiers.scryfallOracleId,
       "scryfallIllustrationId": card.identifiers.scryfallIllustrationId,
     });
+  }
+
+  for (var set in allSets.data.values) {
+    if (!set.isOnlineOnly && !(set.isForeignOnly ?? false)) {
+      batch.insert("sets", MagicDeckManagerSet.fromMtgSet(set).toJson());
+    }
   }
 
   await batch.commit();
