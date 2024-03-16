@@ -30,11 +30,14 @@ void magicDeckManagerAllCards(AllSets allSets) async {
 
   var cardNames = groupBy<CardSet, String>(cards, (card) => card.name).entries.map((e) => e.key);
 
-  var outputDataModel = SearchableJsonAllSetCards(cardNames
-      .map((e) => SearchableJsonCardSet(
-            name: e,
-          ))
-      .toList());
+  var outputDataModel = SearchableJsonAllSetCards(
+    cardNames
+        .map((e) => SearchableJsonCardSet(
+              name: e,
+            ))
+        .toList(),
+    allSets.meta,
+  );
 
   var result = jsonEncode(outputDataModel);
   outputSearchableFile.writeAsStringSync(result);
