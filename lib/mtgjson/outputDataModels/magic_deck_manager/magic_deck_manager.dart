@@ -94,11 +94,25 @@ void magicDeckManagerAllCards(AllSets allSets) async {
           type TEXT
         )""",
       );
+      await db.execute(
+        """CREATE TABLE meta(
+          date DATE,
+          version TEXT
+        )""",
+      );
     },
     version: 1,
   );
 
   var batch = db.batch();
+
+  batch.insert(
+    "meta",
+    {
+      "date": allSets.meta.date,
+      "version": allSets.meta.version,
+    },
+  );
 
   for (var c in cards) {
     var card = MagicDeckManagerCardSet.fromCardSet(c);
