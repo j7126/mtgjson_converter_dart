@@ -10,6 +10,7 @@ SearchableJsonCardSet _$SearchableJsonCardSetFromJson(
         Map<String, dynamic> json) =>
     SearchableJsonCardSet(
       name: json['name'] as String,
+      types: (json['types'] as List<dynamic>).map((e) => e as String).toList(),
     )
       ..cardSearchString = json['cardSearchString'] as String
       ..cardSearchStringWords = (json['cardSearchStringWords'] as List<dynamic>)
@@ -20,6 +21,7 @@ Map<String, dynamic> _$SearchableJsonCardSetToJson(
         SearchableJsonCardSet instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'types': instance.types,
       'cardSearchString': instance.cardSearchString,
       'cardSearchStringWords': instance.cardSearchStringWords,
     };

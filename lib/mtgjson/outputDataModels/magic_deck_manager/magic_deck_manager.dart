@@ -28,12 +28,13 @@ void magicDeckManagerAllCards(AllSets allSets) async {
     }
   }
 
-  var cardNames = groupBy<CardSet, String>(cards, (card) => card.name).entries.map((e) => e.key);
+  var cardsGroupedFirst = groupBy<CardSet, String>(cards, (card) => card.name).entries.map((e) => e.value.first);
 
   var outputDataModel = SearchableJsonAllSetCards(
-    cardNames
+    cardsGroupedFirst
         .map((e) => SearchableJsonCardSet(
-              name: e,
+              name: e.name,
+              types: e.types,
             ))
         .toList(),
     allSets.meta,

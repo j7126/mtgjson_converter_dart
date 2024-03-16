@@ -7,12 +7,14 @@ part 'searchable_card_set.g.dart';
 class SearchableJsonCardSet {
   SearchableJsonCardSet({
     required this.name,
+    required this.types
   }) {
     cardSearchString = filterStringForSearch(name);
     cardSearchStringWords = cardSearchString.split(' ');
   }
 
   String name;
+  List<String> types;
 
   late String cardSearchString;
   late List<String> cardSearchStringWords;
