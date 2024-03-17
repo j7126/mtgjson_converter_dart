@@ -11,7 +11,8 @@ class SearchableJsonCardSet {
     required this.types,
     required this.subtypes,
     required this.supertypes,
-    this.leadershipSkills
+    this.leadershipSkills,
+    this.keywords,
   }) {
     cardSearchString = filterStringForSearch(name);
     cardSearchStringWords = cardSearchString.split(' ');
@@ -22,6 +23,7 @@ class SearchableJsonCardSet {
   List<String> subtypes;
   List<String> supertypes;
   LeadershipSkills? leadershipSkills;
+  List<String>? keywords;
 
   late String cardSearchString;
   late List<String> cardSearchStringWords;

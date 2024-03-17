@@ -14,8 +14,10 @@ class MagicDeckManagerCardSet {
     required this.colors,
     required this.finishes,
     required this.frameVersion,
+    this.keywords,
     required this.language,
     required this.layout,
+    this.loyalty,
     this.manaValue,
     this.manaCost,
     this.rarity,
@@ -37,8 +39,10 @@ class MagicDeckManagerCardSet {
   List<String> colors;
   List<String> finishes;
   String frameVersion;
+  List<String>? keywords;
   String language;
   String layout;
+  String? loyalty;
   double? manaValue;
   String? manaCost;
   String? rarity;
@@ -65,8 +69,10 @@ class MagicDeckManagerCardSet {
       colors: cardSet.colors,
       finishes: cardSet.finishes,
       frameVersion: cardSet.frameVersion,
+      keywords: cardSet.keywords,
       language: cardSet.language,
       layout: cardSet.layout,
+      loyalty: cardSet.loyalty,
       manaValue: cardSet.manaValue,
       manaCost: cardSet.manaCost,
       rarity: cardSet.rarity,

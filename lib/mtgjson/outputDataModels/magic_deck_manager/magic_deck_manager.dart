@@ -38,6 +38,7 @@ void magicDeckManagerAllCards(AllSets allSets) async {
               subtypes: e.subtypes,
               supertypes: e.supertypes,
               leadershipSkills: e.leadershipSkills,
+              keywords: e.keywords,
             ))
         .toList(),
     allSets.meta,
@@ -66,8 +67,10 @@ void magicDeckManagerAllCards(AllSets allSets) async {
           colors TEXT,
           finishes TEXT,
           frameVersion TEXT,
+          keywords TEXT,
           language TEXT,
           layout TEXT,
+          loyalty TEXT,
           manaValue DOUBLE,
           manaCost TEXT,
           rarity TEXT,
@@ -130,6 +133,7 @@ void magicDeckManagerAllCards(AllSets allSets) async {
     cardData["colorIdentity"] = card.colorIdentity.join(", ");
     cardData["colors"] = card.colors.join(", ");
     cardData["finishes"] = card.finishes.join(", ");
+    cardData["keywords"] = card.keywords?.join(", ");
     cardData["subtypes"] = card.subtypes.join(", ");
     cardData["supertypes"] = card.supertypes.join(", ");
     cardData["types"] = card.types.join(", ");
