@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:mtgjson_converter_dart/mtgjson/inputDataModel/leadership_skills.dart';
 import 'package:string_normalizer/string_normalizer.dart';
 
 part 'searchable_card_set.g.dart';
@@ -7,7 +8,10 @@ part 'searchable_card_set.g.dart';
 class SearchableJsonCardSet {
   SearchableJsonCardSet({
     required this.name,
-    required this.types
+    required this.types,
+    required this.subtypes,
+    required this.supertypes,
+    this.leadershipSkills
   }) {
     cardSearchString = filterStringForSearch(name);
     cardSearchStringWords = cardSearchString.split(' ');
@@ -15,6 +19,9 @@ class SearchableJsonCardSet {
 
   String name;
   List<String> types;
+  List<String> subtypes;
+  List<String> supertypes;
+  LeadershipSkills? leadershipSkills;
 
   late String cardSearchString;
   late List<String> cardSearchStringWords;

@@ -35,6 +35,9 @@ void magicDeckManagerAllCards(AllSets allSets) async {
         .map((e) => SearchableJsonCardSet(
               name: e.name,
               types: e.types,
+              subtypes: e.subtypes,
+              supertypes: e.supertypes,
+              leadershipSkills: e.leadershipSkills,
             ))
         .toList(),
     allSets.meta,

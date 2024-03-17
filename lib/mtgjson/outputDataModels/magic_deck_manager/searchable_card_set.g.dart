@@ -11,6 +11,15 @@ SearchableJsonCardSet _$SearchableJsonCardSetFromJson(
     SearchableJsonCardSet(
       name: json['name'] as String,
       types: (json['types'] as List<dynamic>).map((e) => e as String).toList(),
+      subtypes:
+          (json['subtypes'] as List<dynamic>).map((e) => e as String).toList(),
+      supertypes: (json['supertypes'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      leadershipSkills: json['leadershipSkills'] == null
+          ? null
+          : LeadershipSkills.fromJson(
+              json['leadershipSkills'] as Map<String, dynamic>),
     )
       ..cardSearchString = json['cardSearchString'] as String
       ..cardSearchStringWords = (json['cardSearchStringWords'] as List<dynamic>)
@@ -22,6 +31,9 @@ Map<String, dynamic> _$SearchableJsonCardSetToJson(
     <String, dynamic>{
       'name': instance.name,
       'types': instance.types,
+      'subtypes': instance.subtypes,
+      'supertypes': instance.supertypes,
+      'leadershipSkills': instance.leadershipSkills?.toJson(),
       'cardSearchString': instance.cardSearchString,
       'cardSearchStringWords': instance.cardSearchStringWords,
     };
