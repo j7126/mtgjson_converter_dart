@@ -29,6 +29,10 @@ void magicLifeWheelAllCards(AllSets allSets) {
             name: e.name,
             setCode: e.setCode,
             uuid: e.uuid,
+            subtypes: e.subtypes,
+            supertypes: e.supertypes,
+            leadershipSkills: e.leadershipSkills,
+            keywords: e.keywords,
           ))
       .toList());
 

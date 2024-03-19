@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:mtgjson_converter_dart/mtgjson/inputDataModel/leadership_skills.dart';
 import 'package:string_normalizer/string_normalizer.dart';
 import 'identifiers.dart';
 
@@ -12,6 +13,10 @@ class MagicLifeWheelJsonCardSet {
     required this.setCode,
     required this.identifiers,
     required this.artist,
+    required this.subtypes,
+    required this.supertypes,
+    this.leadershipSkills,
+    this.keywords,
   }) {
     cardSearchString = filterStringForSearch(name);
     cardSearchStringWords = cardSearchString.split(' ');
@@ -22,6 +27,10 @@ class MagicLifeWheelJsonCardSet {
   String setCode;
   String? artist;
   MagicLifeWheelJsonIdentifiers identifiers;
+  List<String> subtypes;
+  List<String> supertypes;
+  LeadershipSkills? leadershipSkills;
+  List<String>? keywords;
 
   late String cardSearchString;
   late List<String> cardSearchStringWords;
