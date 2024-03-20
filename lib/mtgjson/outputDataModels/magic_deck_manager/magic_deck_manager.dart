@@ -37,6 +37,7 @@ void magicDeckManagerAllCards(AllSets allSets) async {
               types: e.types,
               subtypes: e.subtypes,
               supertypes: e.supertypes,
+              colorIdentity: e.colorIdentity,
               leadershipSkills: e.leadershipSkills,
               keywords: e.keywords,
             ))

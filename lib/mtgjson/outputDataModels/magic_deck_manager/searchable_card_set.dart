@@ -11,6 +11,7 @@ class SearchableJsonCardSet {
     required this.types,
     required this.subtypes,
     required this.supertypes,
+    required this.colorIdentity,
     this.leadershipSkills,
     this.keywords,
   }) {
@@ -22,6 +23,7 @@ class SearchableJsonCardSet {
   List<String> types;
   List<String> subtypes;
   List<String> supertypes;
+  List<String> colorIdentity;
   LeadershipSkills? leadershipSkills;
   List<String>? keywords;
 
