@@ -29,10 +29,12 @@ void magicLifeWheelAllCards(AllSets allSets) {
             name: e.name,
             setCode: e.setCode,
             uuid: e.uuid,
+            types: e.types,
             subtypes: e.subtypes,
             supertypes: e.supertypes,
             leadershipSkills: e.leadershipSkills,
             keywords: e.keywords,
+            text: e.types.contains("Plane") ? e.text : null,
           ))
       .toList());
 

@@ -11,12 +11,14 @@ class MagicLifeWheelJsonCardSet {
     required this.name,
     required this.uuid,
     required this.setCode,
-    required this.identifiers,
     required this.artist,
+    required this.identifiers,
+    required this.types,
     required this.subtypes,
     required this.supertypes,
     this.leadershipSkills,
     this.keywords,
+    this.text,
   }) {
     cardSearchString = filterStringForSearch(name);
     cardSearchStringWords = cardSearchString.split(' ');
@@ -27,10 +29,12 @@ class MagicLifeWheelJsonCardSet {
   String setCode;
   String? artist;
   MagicLifeWheelJsonIdentifiers identifiers;
+  List<String> types;
   List<String> subtypes;
   List<String> supertypes;
   LeadershipSkills? leadershipSkills;
   List<String>? keywords;
+  String? text;
 
   late String cardSearchString;
   late List<String> cardSearchStringWords;

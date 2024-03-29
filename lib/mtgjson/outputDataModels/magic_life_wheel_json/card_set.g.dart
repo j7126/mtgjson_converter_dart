@@ -12,9 +12,10 @@ MagicLifeWheelJsonCardSet _$MagicLifeWheelJsonCardSetFromJson(
       name: json['name'] as String,
       uuid: json['uuid'] as String,
       setCode: json['setCode'] as String,
+      artist: json['artist'] as String?,
       identifiers: MagicLifeWheelJsonIdentifiers.fromJson(
           json['identifiers'] as Map<String, dynamic>),
-      artist: json['artist'] as String?,
+      types: (json['types'] as List<dynamic>).map((e) => e as String).toList(),
       subtypes:
           (json['subtypes'] as List<dynamic>).map((e) => e as String).toList(),
       supertypes: (json['supertypes'] as List<dynamic>)
@@ -27,6 +28,7 @@ MagicLifeWheelJsonCardSet _$MagicLifeWheelJsonCardSetFromJson(
       keywords: (json['keywords'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      text: json['text'] as String?,
     )
       ..cardSearchString = json['cardSearchString'] as String
       ..cardSearchStringWords = (json['cardSearchStringWords'] as List<dynamic>)
@@ -41,10 +43,12 @@ Map<String, dynamic> _$MagicLifeWheelJsonCardSetToJson(
       'setCode': instance.setCode,
       'artist': instance.artist,
       'identifiers': instance.identifiers.toJson(),
+      'types': instance.types,
       'subtypes': instance.subtypes,
       'supertypes': instance.supertypes,
       'leadershipSkills': instance.leadershipSkills?.toJson(),
       'keywords': instance.keywords,
+      'text': instance.text,
       'cardSearchString': instance.cardSearchString,
       'cardSearchStringWords': instance.cardSearchStringWords,
     };
