@@ -19,9 +19,14 @@ class MagicLifeWheelJsonCardSet {
     this.leadershipSkills,
     this.keywords,
     this.text,
+    this.flavorName,
   }) {
     cardSearchString = filterStringForSearch(name);
     cardSearchStringWords = cardSearchString.split(' ');
+    if (flavorName != null) {
+      cardSearchStringAlt = filterStringForSearch(flavorName!);
+      cardSearchStringWordsAlt = cardSearchStringAlt!.split(' ');
+    }
   }
 
   String name;
@@ -35,9 +40,12 @@ class MagicLifeWheelJsonCardSet {
   LeadershipSkills? leadershipSkills;
   List<String>? keywords;
   String? text;
+  String? flavorName;
 
   late String cardSearchString;
   late List<String> cardSearchStringWords;
+  String? cardSearchStringAlt;
+  List<String>? cardSearchStringWordsAlt;
 
   factory MagicLifeWheelJsonCardSet.fromJson(Map<String, dynamic> json) => _$MagicLifeWheelJsonCardSetFromJson(json);
 

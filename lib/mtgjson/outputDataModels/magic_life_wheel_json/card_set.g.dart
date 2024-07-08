@@ -29,11 +29,17 @@ MagicLifeWheelJsonCardSet _$MagicLifeWheelJsonCardSetFromJson(
           ?.map((e) => e as String)
           .toList(),
       text: json['text'] as String?,
+      flavorName: json['flavorName'] as String?,
     )
       ..cardSearchString = json['cardSearchString'] as String
       ..cardSearchStringWords = (json['cardSearchStringWords'] as List<dynamic>)
           .map((e) => e as String)
-          .toList();
+          .toList()
+      ..cardSearchStringAlt = json['cardSearchStringAlt'] as String?
+      ..cardSearchStringWordsAlt =
+          (json['cardSearchStringWordsAlt'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList();
 
 Map<String, dynamic> _$MagicLifeWheelJsonCardSetToJson(
         MagicLifeWheelJsonCardSet instance) =>
@@ -49,6 +55,9 @@ Map<String, dynamic> _$MagicLifeWheelJsonCardSetToJson(
       'leadershipSkills': instance.leadershipSkills?.toJson(),
       'keywords': instance.keywords,
       'text': instance.text,
+      'flavorName': instance.flavorName,
       'cardSearchString': instance.cardSearchString,
       'cardSearchStringWords': instance.cardSearchStringWords,
+      'cardSearchStringAlt': instance.cardSearchStringAlt,
+      'cardSearchStringWordsAlt': instance.cardSearchStringWordsAlt,
     };

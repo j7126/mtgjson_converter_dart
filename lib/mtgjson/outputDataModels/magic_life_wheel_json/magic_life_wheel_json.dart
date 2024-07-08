@@ -35,6 +35,7 @@ void magicLifeWheelAllCards(AllSets allSets) {
             leadershipSkills: e.leadershipSkills,
             keywords: e.keywords,
             text: e.types.contains("Plane") ? e.text : null,
+            flavorName: e.flavorName,
           ))
       .toList());
 
