@@ -13,7 +13,7 @@ CardSet _$CardSetFromJson(Map<String, dynamic> json) => CardSet(
           .toList(),
       asciiName: json['asciiName'] as String?,
       attractionLights: (json['attractionLights'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList(),
       availability: (json['availability'] as List<dynamic>)
           .map((e) => e as String)
@@ -36,7 +36,7 @@ CardSet _$CardSetFromJson(Map<String, dynamic> json) => CardSet(
       convertedManaCost: (json['convertedManaCost'] as num).toDouble(),
       defense: json['defense'] as String?,
       duelDeck: json['duelDeck'] as String?,
-      edhrecRank: json['edhrecRank'] as int?,
+      edhrecRank: (json['edhrecRank'] as num?)?.toInt(),
       edhrecSaltiness: (json['edhrecSaltiness'] as num?)?.toDouble(),
       faceConvertedManaCost:
           (json['faceConvertedManaCost'] as num?)?.toDouble(),

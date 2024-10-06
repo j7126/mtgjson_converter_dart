@@ -7,7 +7,7 @@ environment:
   sdk: ^3.2.3
 
 dependencies:
-  json_annotation: ^4.8.1
+  json_annotation: ^4.9.0
   string_normalizer: ^0.2.2
   collection: ^1.18.0
   path: ^1.8.3

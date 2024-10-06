@@ -20,6 +20,7 @@ class MagicLifeWheelJsonCardSet {
     this.keywords,
     this.text,
     this.flavorName,
+    this.isFunny,
   }) {
     cardSearchString = filterStringForSearch(name);
     cardSearchStringWords = cardSearchString.split(' ');
@@ -41,6 +42,7 @@ class MagicLifeWheelJsonCardSet {
   List<String>? keywords;
   String? text;
   String? flavorName;
+  bool? isFunny;
 
   late String cardSearchString;
   late List<String> cardSearchStringWords;

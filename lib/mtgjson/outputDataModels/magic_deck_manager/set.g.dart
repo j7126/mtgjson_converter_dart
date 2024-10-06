@@ -8,13 +8,13 @@ part of 'set.dart';
 
 MagicDeckManagerSet _$MagicDeckManagerSetFromJson(Map<String, dynamic> json) =>
     MagicDeckManagerSet(
-      baseSetSize: json['baseSetSize'] as int,
+      baseSetSize: (json['baseSetSize'] as num).toInt(),
       code: json['code'] as String,
       isFoilOnly: json['isFoilOnly'] as bool,
       keyruneCode: json['keyruneCode'] as String,
       name: json['name'] as String,
       releaseDate: json['releaseDate'] as String,
-      totalSetSize: json['totalSetSize'] as int,
+      totalSetSize: (json['totalSetSize'] as num).toInt(),
       type: json['type'] as String,
     );
 

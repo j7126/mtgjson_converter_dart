@@ -36,6 +36,7 @@ void magicLifeWheelAllCards(AllSets allSets) {
             keywords: e.keywords,
             text: e.types.contains("Plane") ? e.text : null,
             flavorName: e.flavorName,
+            isFunny: e.isFunny == true ? true : null,
           ))
       .toList());
 

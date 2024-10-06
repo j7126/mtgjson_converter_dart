@@ -7,12 +7,12 @@ part of 'set.dart';
 // **************************************************************************
 
 MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => MtgSet(
-      baseSetSize: json['baseSetSize'] as int,
+      baseSetSize: (json['baseSetSize'] as num).toInt(),
       block: json['block'] as String?,
       cards: (json['cards'] as List<dynamic>)
           .map((e) => CardSet.fromJson(e as Map<String, dynamic>))
           .toList(),
-      cardsphereSetId: json['cardsphereSetId'] as int?,
+      cardsphereSetId: (json['cardsphereSetId'] as num?)?.toInt(),
       code: json['code'] as String,
       decks: (json['decks'] as List<dynamic>?)
           ?.map((e) => DeckSet.fromJson(e as Map<String, dynamic>))
@@ -27,19 +27,19 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => MtgSet(
       languages: (json['languages'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      mcmId: json['mcmId'] as int?,
-      mcmIdExtras: json['mcmIdExtras'] as int?,
+      mcmId: (json['mcmId'] as num?)?.toInt(),
+      mcmIdExtras: (json['mcmIdExtras'] as num?)?.toInt(),
       mcmName: json['mcmName'] as String?,
       mtgoCode: json['mtgoCode'] as String?,
       name: json['name'] as String,
       parentCode: json['parentCode'] as String?,
       releaseDate: json['releaseDate'] as String,
-      tcgplayerGroupId: json['tcgplayerGroupId'] as int?,
+      tcgplayerGroupId: (json['tcgplayerGroupId'] as num?)?.toInt(),
       tokens: (json['tokens'] as List<dynamic>)
           .map((e) => CardToken.fromJson(e as Map<String, dynamic>))
           .toList(),
       tokenSetCode: json['tokenSetCode'] as String?,
-      totalSetSize: json['totalSetSize'] as int,
+      totalSetSize: (json['totalSetSize'] as num).toInt(),
       type: json['type'] as String,
     );
 

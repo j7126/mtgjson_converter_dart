@@ -30,6 +30,7 @@ MagicLifeWheelJsonCardSet _$MagicLifeWheelJsonCardSetFromJson(
           .toList(),
       text: json['text'] as String?,
       flavorName: json['flavorName'] as String?,
+      isFunny: json['isFunny'] as bool?,
     )
       ..cardSearchString = json['cardSearchString'] as String
       ..cardSearchStringWords = (json['cardSearchStringWords'] as List<dynamic>)
@@ -56,6 +57,7 @@ Map<String, dynamic> _$MagicLifeWheelJsonCardSetToJson(
       'keywords': instance.keywords,
       'text': instance.text,
       'flavorName': instance.flavorName,
+      'isFunny': instance.isFunny,
       'cardSearchString': instance.cardSearchString,
       'cardSearchStringWords': instance.cardSearchStringWords,
       'cardSearchStringAlt': instance.cardSearchStringAlt,
