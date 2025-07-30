@@ -15,7 +15,6 @@ class MagicLifeWheelJsonCardSet {
     required this.identifiers,
     required this.types,
     required this.subtypes,
-    required this.supertypes,
     this.leadershipSkills,
     this.keywords,
     this.text,
@@ -37,7 +36,6 @@ class MagicLifeWheelJsonCardSet {
   MagicLifeWheelJsonIdentifiers identifiers;
   List<String> types;
   List<String> subtypes;
-  List<String> supertypes;
   LeadershipSkills? leadershipSkills;
   List<String>? keywords;
   String? text;

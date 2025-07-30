@@ -18,9 +18,6 @@ MagicLifeWheelJsonCardSet _$MagicLifeWheelJsonCardSetFromJson(
       types: (json['types'] as List<dynamic>).map((e) => e as String).toList(),
       subtypes:
           (json['subtypes'] as List<dynamic>).map((e) => e as String).toList(),
-      supertypes: (json['supertypes'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
       leadershipSkills: json['leadershipSkills'] == null
           ? null
           : LeadershipSkills.fromJson(
@@ -52,7 +49,6 @@ Map<String, dynamic> _$MagicLifeWheelJsonCardSetToJson(
       'identifiers': instance.identifiers.toJson(),
       'types': instance.types,
       'subtypes': instance.subtypes,
-      'supertypes': instance.supertypes,
       'leadershipSkills': instance.leadershipSkills?.toJson(),
       'keywords': instance.keywords,
       'text': instance.text,
