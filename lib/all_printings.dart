@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:mtgjson_converter_dart/mtgjson/inputDataModel/all_sets.dart';
-import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_life_wheel_json/magic_life_wheel_json.dart' as magic_life_wheel_json;
+import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_life_wheel_protobuf/magic_life_wheel_protobuf.dart' as magic_life_wheel_protobuf;
 import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_deck_manager/magic_deck_manager.dart' as magic_deck_manager;
 
 void info() {
@@ -20,7 +20,7 @@ AllSets getAllSets() {
 
 void magicLifeWheelAllCards() {
   var allSets = getAllSets();
-  magic_life_wheel_json.magicLifeWheelAllCards(allSets);
+  magic_life_wheel_protobuf.magicLifeWheelAllCards(allSets);
 }
 
 void magicDeckManagerAllCards() {

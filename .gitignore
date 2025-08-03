@@ -3,6 +3,7 @@
 .dart_tool/
 
 /*.json
+/*.bin
 /*.sqlite
 
 # Miscellaneous
