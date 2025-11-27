@@ -77,9 +77,6 @@ CardToken _$CardTokenFromJson(Map<String, dynamic> json) => CardToken(
       setCode: json['setCode'] as String,
       side: json['side'] as String?,
       signature: json['signature'] as String?,
-      sourceProducts: (json['sourceProducts'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
       subsets:
           (json['subsets'] as List<dynamic>?)?.map((e) => e as String).toList(),
       subtypes:
@@ -139,7 +136,6 @@ Map<String, dynamic> _$CardTokenToJson(CardToken instance) => <String, dynamic>{
       'setCode': instance.setCode,
       'side': instance.side,
       'signature': instance.signature,
-      'sourceProducts': instance.sourceProducts,
       'subsets': instance.subsets,
       'subtypes': instance.subtypes,
       'supertypes': instance.supertypes,

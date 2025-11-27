@@ -50,7 +50,6 @@ class CardToken {
     required this.setCode,
     this.side,
     this.signature,
-    this.sourceProducts,
     this.subsets,
     required this.subtypes,
     required this.supertypes,
@@ -105,7 +104,6 @@ class CardToken {
   String setCode;
   String? side;
   String? signature;
-  List<String>? sourceProducts;
   List<String>? subsets;
   List<String> subtypes;
   List<String> supertypes;
