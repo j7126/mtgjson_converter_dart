@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -117,8 +117,7 @@ class MagicLifeWheelProtobufCardSet extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  MagicLifeWheelProtobufCardSet clone() =>
-      MagicLifeWheelProtobufCardSet()..mergeFromMessage(this);
+  MagicLifeWheelProtobufCardSet clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   MagicLifeWheelProtobufCardSet copyWith(
           void Function(MagicLifeWheelProtobufCardSet) updates) =>
@@ -134,8 +133,6 @@ class MagicLifeWheelProtobufCardSet extends $pb.GeneratedMessage {
       MagicLifeWheelProtobufCardSet._();
   @$core.override
   MagicLifeWheelProtobufCardSet createEmptyInstance() => create();
-  static $pb.PbList<MagicLifeWheelProtobufCardSet> createRepeated() =>
-      $pb.PbList<MagicLifeWheelProtobufCardSet>();
   @$core.pragma('dart2js:noInline')
   static MagicLifeWheelProtobufCardSet getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<MagicLifeWheelProtobufCardSet>(create);

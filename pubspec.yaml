@@ -8,12 +8,12 @@ environment:
 
 dependencies:
   json_annotation: ^4.9.0
-  string_normalizer: ^0.2.2
+  string_normalizer: ^0.4.0
   collection: ^1.18.0
   path: ^1.8.3
   sqflite: ^2.3.0
   sqflite_common_ffi: ^2.3.0+2
-  protobuf: ^4.1.1
+  protobuf: ^6.0.0
 
 dev_dependencies:
   lints: ^2.1.0
