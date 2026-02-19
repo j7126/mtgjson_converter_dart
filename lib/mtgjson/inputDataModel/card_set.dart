@@ -38,8 +38,8 @@ class CardSet {
     this.hand,
     this.hasAlternativeDeckLimit,
     this.hasContentWarning,
-    required this.hasFoil,
-    required this.hasNonFoil,
+    this.hasFoil,
+    this.hasNonFoil,
     required this.identifiers,
     this.isAlternative,
     this.isFullArt,
@@ -121,8 +121,8 @@ class CardSet {
   String? hand;
   bool? hasAlternativeDeckLimit;
   bool? hasContentWarning;
-  bool hasFoil;
-  bool hasNonFoil;
+  bool? hasFoil;
+  bool? hasNonFoil;
   Identifiers identifiers;
   bool? isAlternative;
   bool? isFullArt;

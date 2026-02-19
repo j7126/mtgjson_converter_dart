@@ -23,8 +23,8 @@ class CardToken {
     this.flavorText,
     this.frameEffects,
     required this.frameVersion,
-    required this.hasFoil,
-    required this.hasNonFoil,
+    this.hasFoil,
+    this.hasNonFoil,
     required this.identifiers,
     this.isFullArt,
     this.isFunny,
@@ -77,8 +77,8 @@ class CardToken {
   String? flavorText;
   List<String>? frameEffects;
   String frameVersion;
-  bool hasFoil;
-  bool hasNonFoil;
+  bool? hasFoil;
+  bool? hasNonFoil;
   Identifiers identifiers;
   bool? isFullArt;
   bool? isFunny;

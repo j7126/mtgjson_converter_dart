@@ -54,8 +54,8 @@ CardSet _$CardSetFromJson(Map<String, dynamic> json) => CardSet(
       hand: json['hand'] as String?,
       hasAlternativeDeckLimit: json['hasAlternativeDeckLimit'] as bool?,
       hasContentWarning: json['hasContentWarning'] as bool?,
-      hasFoil: json['hasFoil'] as bool,
-      hasNonFoil: json['hasNonFoil'] as bool,
+      hasFoil: json['hasFoil'] as bool?,
+      hasNonFoil: json['hasNonFoil'] as bool?,
       identifiers:
           Identifiers.fromJson(json['identifiers'] as Map<String, dynamic>),
       isAlternative: json['isAlternative'] as bool?,

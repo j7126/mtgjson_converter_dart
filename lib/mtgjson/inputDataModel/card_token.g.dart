@@ -39,8 +39,8 @@ CardToken _$CardTokenFromJson(Map<String, dynamic> json) => CardToken(
           ?.map((e) => e as String)
           .toList(),
       frameVersion: json['frameVersion'] as String,
-      hasFoil: json['hasFoil'] as bool,
-      hasNonFoil: json['hasNonFoil'] as bool,
+      hasFoil: json['hasFoil'] as bool?,
+      hasNonFoil: json['hasNonFoil'] as bool?,
       identifiers:
           Identifiers.fromJson(json['identifiers'] as Map<String, dynamic>),
       isFullArt: json['isFullArt'] as bool?,
