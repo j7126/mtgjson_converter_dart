@@ -19,14 +19,14 @@ MagicDeckManagerSet _$MagicDeckManagerSetFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$MagicDeckManagerSetToJson(
-        MagicDeckManagerSet instance) =>
-    <String, dynamic>{
-      'baseSetSize': instance.baseSetSize,
-      'code': instance.code,
-      'isFoilOnly': instance.isFoilOnly,
-      'keyruneCode': instance.keyruneCode,
-      'name': instance.name,
-      'releaseDate': instance.releaseDate,
-      'totalSetSize': instance.totalSetSize,
-      'type': instance.type,
-    };
+  MagicDeckManagerSet instance,
+) => <String, dynamic>{
+  'baseSetSize': instance.baseSetSize,
+  'code': instance.code,
+  'isFoilOnly': instance.isFoilOnly,
+  'keyruneCode': instance.keyruneCode,
+  'name': instance.name,
+  'releaseDate': instance.releaseDate,
+  'totalSetSize': instance.totalSetSize,
+  'type': instance.type,
+};

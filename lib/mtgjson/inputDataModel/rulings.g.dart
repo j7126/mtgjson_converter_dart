@@ -6,12 +6,10 @@ part of 'rulings.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Rulings _$RulingsFromJson(Map<String, dynamic> json) => Rulings(
-      date: json['date'] as String,
-      text: json['text'] as String,
-    );
+Rulings _$RulingsFromJson(Map<String, dynamic> json) =>
+    Rulings(date: json['date'] as String, text: json['text'] as String);
 
 Map<String, dynamic> _$RulingsToJson(Rulings instance) => <String, dynamic>{
-      'date': instance.date,
-      'text': instance.text,
-    };
+  'date': instance.date,
+  'text': instance.text,
+};

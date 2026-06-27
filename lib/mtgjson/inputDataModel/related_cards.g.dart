@@ -7,11 +7,9 @@ part of 'related_cards.dart';
 // **************************************************************************
 
 RelatedCards _$RelatedCardsFromJson(Map<String, dynamic> json) => RelatedCards(
-      (json['reverseRelated'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      (json['spellbook'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    );
+  (json['reverseRelated'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  (json['spellbook'] as List<dynamic>?)?.map((e) => e as String).toList(),
+);
 
 Map<String, dynamic> _$RelatedCardsToJson(RelatedCards instance) =>
     <String, dynamic>{
