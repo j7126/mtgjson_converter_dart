@@ -21,9 +21,11 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 class SetList extends $pb.GeneratedMessage {
   factory SetList({
     $core.Iterable<$0.SetListSet>? sets,
+    $core.String? buildDate,
   }) {
     final result = create();
     if (sets != null) result.sets.addAll(sets);
+    if (buildDate != null) result.buildDate = buildDate;
     return result;
   }
 
@@ -43,6 +45,7 @@ class SetList extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..pPM<$0.SetListSet>(1, _omitFieldNames ? '' : 'sets',
         subBuilder: $0.SetListSet.create)
+    ..aOS(2, _omitFieldNames ? '' : 'buildDate', protoName: 'buildDate')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -65,6 +68,15 @@ class SetList extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<$0.SetListSet> get sets => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get buildDate => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set buildDate($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBuildDate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuildDate() => $_clearField(2);
 }
 
 const $core.bool _omitFieldNames =

@@ -27,10 +27,11 @@ const SetList$json = {
       '6': '.mtgjson_converter_dart.SetListSet',
       '10': 'sets'
     },
+    {'1': 'buildDate', '3': 2, '4': 1, '5': 9, '10': 'buildDate'},
   ],
 };
 
 /// Descriptor for `SetList`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List setListDescriptor = $convert.base64Decode(
     'CgdTZXRMaXN0EjYKBHNldHMYASADKAsyIi5tdGdqc29uX2NvbnZlcnRlcl9kYXJ0LlNldExpc3'
-    'RTZXRSBHNldHM=');
+    'RTZXRSBHNldHMSHAoJYnVpbGREYXRlGAIgASgJUglidWlsZERhdGU=');

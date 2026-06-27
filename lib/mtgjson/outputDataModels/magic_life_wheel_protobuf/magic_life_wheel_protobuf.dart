@@ -7,6 +7,11 @@ import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_life_wheel
 import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_life_wheel_protobuf/generated/set.pb.dart';
 import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_life_wheel_protobuf/generated/sets.pb.dart';
 
+String _getDate() {
+  var now = DateTime.now();
+  return "${now.year}${now.month.toString().padLeft(2, '0')}${now.day.toString().padLeft(2, '0')}";
+}
+
 void magicLifeWheelAllCards(AllSets allSets) {
   var outputFileJson = File("./all_cards.json");
   var outputFileBinary = File("./all_cards.bin");
@@ -22,6 +27,7 @@ void magicLifeWheelAllCards(AllSets allSets) {
 
   var outputDataModel = MagicLifeWheelProtobufAllSetCards(
     data: cards.map(MagicLifeWheelProtobufCardSetSearchable.build).toList(),
+    buildDate: _getDate(),
   );
 
   outputFileJson.writeAsStringSync(outputDataModel.writeToJson());
@@ -40,6 +46,7 @@ void magicLifeWheelSetList(SetListAllSets allSets) {
               releaseDate: e.releaseDate,
             ))
         .toList(),
+        buildDate: _getDate(),
   );
 
   outputFileJson.writeAsStringSync(outputDataModel.writeToJson());

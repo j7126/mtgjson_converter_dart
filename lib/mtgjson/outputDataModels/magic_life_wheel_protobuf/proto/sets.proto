@@ -5,4 +5,5 @@ import "set.proto";
 
 message SetList {
   repeated SetListSet sets = 1;
+  string buildDate = 2;
 }

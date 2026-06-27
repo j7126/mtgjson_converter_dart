@@ -27,6 +27,7 @@ const MagicLifeWheelProtobufAllSetCards$json = {
       '6': '.mtgjson_converter_dart.MagicLifeWheelProtobufCardSet',
       '10': 'data'
     },
+    {'1': 'buildDate', '3': 2, '4': 1, '5': 9, '10': 'buildDate'},
   ],
 };
 
@@ -34,4 +35,5 @@ const MagicLifeWheelProtobufAllSetCards$json = {
 final $typed_data.Uint8List magicLifeWheelProtobufAllSetCardsDescriptor =
     $convert.base64Decode(
         'CiFNYWdpY0xpZmVXaGVlbFByb3RvYnVmQWxsU2V0Q2FyZHMSSQoEZGF0YRgBIAMoCzI1Lm10Z2'
-        'pzb25fY29udmVydGVyX2RhcnQuTWFnaWNMaWZlV2hlZWxQcm90b2J1ZkNhcmRTZXRSBGRhdGE=');
+        'pzb25fY29udmVydGVyX2RhcnQuTWFnaWNMaWZlV2hlZWxQcm90b2J1ZkNhcmRTZXRSBGRhdGES'
+        'HAoJYnVpbGREYXRlGAIgASgJUglidWlsZERhdGU=');

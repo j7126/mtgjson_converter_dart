@@ -21,9 +21,11 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 class MagicLifeWheelProtobufAllSetCards extends $pb.GeneratedMessage {
   factory MagicLifeWheelProtobufAllSetCards({
     $core.Iterable<$0.MagicLifeWheelProtobufCardSet>? data,
+    $core.String? buildDate,
   }) {
     final result = create();
     if (data != null) result.data.addAll(data);
+    if (buildDate != null) result.buildDate = buildDate;
     return result;
   }
 
@@ -44,6 +46,7 @@ class MagicLifeWheelProtobufAllSetCards extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..pPM<$0.MagicLifeWheelProtobufCardSet>(1, _omitFieldNames ? '' : 'data',
         subBuilder: $0.MagicLifeWheelProtobufCardSet.create)
+    ..aOS(2, _omitFieldNames ? '' : 'buildDate', protoName: 'buildDate')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -71,6 +74,15 @@ class MagicLifeWheelProtobufAllSetCards extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<$0.MagicLifeWheelProtobufCardSet> get data => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get buildDate => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set buildDate($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBuildDate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuildDate() => $_clearField(2);
 }
 
 const $core.bool _omitFieldNames =
