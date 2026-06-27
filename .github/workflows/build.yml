@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  schedule:
+    - cron: '0 0 * * 6'
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: Build Data File
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq ninja-build libgtk-3-dev
+
+      - name: Fetch Files
+        run: ./fetch_files.sh
+
+      - name: Generate Assets
+        run: dart run mtgjson_converter_dart AllPrintings magic_life_wheel_all_cards
+
+      - name: Get latest release (id + tag)
+        id: latest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          latest="$(curl -sS \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/$REPO/releases/latest")"
+          echo "release_id=$(echo "$latest" | jq -r '.id')" >> "$GITHUB_OUTPUT"
+          echo "tag_name=$(echo "$latest" | jq -r '.tag_name')" >> "$GITHUB_OUTPUT"
+
+      - name: Delete old assets with the same base names
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RELEASE_ID: ${{ steps.latest.outputs.release_id }}
+        run: |
+          set -euo pipefail
+
+          assets="$(curl -sS \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/$REPO/releases/$RELEASE_ID/assets")"
+
+          for prefix in all_cards_ set_list_; do
+            echo "$assets" | jq -r --arg prefix "$prefix" '
+              .[] | select(.name | startswith($prefix)) | .id
+            ' | while read -r id; do
+              if [ -n "${id:-}" ] && [ "${id}" != "null" ]; then
+                curl -sS -X DELETE \
+                  -H "Authorization: Bearer $GH_TOKEN" \
+                  "https://api.github.com/repos/$REPO/releases/assets/$id" >/dev/null
+                echo "Deleted asset id: $id"
+              fi
+            done
+          done
+
+      - name: Prepare date-stamped copies
+        if: github.ref_type == 'tag'
+        run: |
+          set -euo pipefail
+          d="$(date +'%Y%m%d')"
+          mkdir -p dist
+          cp all_cards.bin "dist/all_cards_${d}.bin"
+          cp SetList.json "dist/set_list_${d}.json"
+
+      - name: Upload assets to latest release
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
+        with:
+          tag_name: ${{ steps.latest.outputs.tag_name }}
+          files: |
+            dist/all_cards_*.bin
+            dist/set_list_*.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
