@@ -1,5 +1,5 @@
 import 'package:mtgjson_converter_dart/mtgjson/inputDataModel/card_set.dart';
-import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_life_wheel_protobuf/card_set.pb.dart';
+import 'package:mtgjson_converter_dart/mtgjson/outputDataModels/magic_life_wheel_protobuf/generated/card_set.pb.dart';
 import 'package:string_normalizer/string_normalizer.dart';
 
 abstract final class MagicLifeWheelProtobufCardSetSearchable {

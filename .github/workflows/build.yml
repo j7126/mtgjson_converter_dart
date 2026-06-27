@@ -26,8 +26,11 @@ jobs:
       - name: Fetch Files
         run: ./fetch_files.sh
 
-      - name: Generate Assets
+      - name: Generate all cards
         run: dart run mtgjson_converter_dart AllPrintings magic_life_wheel_all_cards
+      
+      - name: Generate all sets
+        run: dart run mtgjson_converter_dart SetList magic_life_wheel_all_sets
 
       - name: Get latest release (id + tag)
         id: latest
@@ -68,21 +71,18 @@ jobs:
           done
 
       - name: Prepare date-stamped copies
-        if: github.ref_type == 'tag'
         run: |
           set -euo pipefail
           d="$(date +'%Y%m%d')"
           mkdir -p dist
           cp all_cards.bin "dist/all_cards_${d}.bin"
-          cp SetList.json "dist/set_list_${d}.json"
+          cp set_list.bin "dist/set_list_${d}.bin"
 
       - name: Upload assets to latest release
         uses: softprops/action-gh-release@v3
-        if: github.ref_type == 'tag'
         with:
           tag_name: ${{ steps.latest.outputs.tag_name }}
           files: |
-            dist/all_cards_*.bin
-            dist/set_list_*.json
+            dist/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

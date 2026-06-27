@@ -1,4 +1,5 @@
 import 'package:mtgjson_converter_dart/all_printings.dart' as all_printings;
+import 'package:mtgjson_converter_dart/all_sets.dart' as all_sets;
 import 'package:mtgjson_converter_dart/help.dart' as help;
 
 void main(List<String> arguments) {
@@ -12,6 +13,14 @@ void main(List<String> arguments) {
       }
       else if (arguments[1] == "magic_deck_manager_all_cards") {
         return all_printings.magicDeckManagerAllCards();
+      }
+    }
+    else if (arguments[0] == "SetList") {
+      if (arguments[1] == "info") {
+        return all_sets.info();
+      }
+      else if (arguments[1] == "magic_life_wheel_all_sets") {
+        return all_sets.magicLifeWheelAllSets();
       }
     }
   }
