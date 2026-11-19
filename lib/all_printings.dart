@@ -18,7 +18,9 @@ AllSets getAllSets() {
   return allSets;
 }
 
-void magicLifeWheelAllCards() {
+Future magicLifeWheelAllCards() async {
+  stdout.write("Starting Magic Life Wheel all_cards format export\n");
+  stdout.write("Loading raw card data...\n");
   var allSets = getAllSets();
   magic_life_wheel_protobuf.magicLifeWheelAllCards(allSets);
 }

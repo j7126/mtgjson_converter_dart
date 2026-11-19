@@ -2,14 +2,14 @@ import 'package:mtgjson_converter_dart/all_printings.dart' as all_printings;
 import 'package:mtgjson_converter_dart/all_sets.dart' as all_sets;
 import 'package:mtgjson_converter_dart/help.dart' as help;
 
-void main(List<String> arguments) {
+Future main(List<String> arguments) async {
   if (arguments.length >= 2) {
     if (arguments[0] == "AllPrintings") {
       if (arguments[1] == "info") {
         return all_printings.info();
       }
       else if (arguments[1] == "magic_life_wheel_all_cards") {
-        return all_printings.magicLifeWheelAllCards();
+        return await all_printings.magicLifeWheelAllCards();
       }
       else if (arguments[1] == "magic_deck_manager_all_cards") {
         return all_printings.magicDeckManagerAllCards();

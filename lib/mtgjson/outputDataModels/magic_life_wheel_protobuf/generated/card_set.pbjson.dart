@@ -155,6 +155,7 @@ const MagicLifeWheelProtobufCardSet$json = {
       '10': 'typePlane',
       '17': true
     },
+    {'1': 'artColors', '3': 21, '4': 3, '5': 13, '10': 'artColors'},
   ],
   '8': [
     {'1': '_scryfallId'},
@@ -191,9 +192,10 @@ final $typed_data.Uint8List magicLifeWheelProtobufCardSetDescriptor = $convert.b
     'b26IAQESPQoXa2V5d29yZENob29zZUJhY2tncm91bmQYESABKAhIClIXa2V5d29yZENob29zZU'
     'JhY2tncm91bmSIAQESMQoRc3VidHlwZUJhY2tncm91bmQYEiABKAhIC1IRc3VidHlwZUJhY2tn'
     'cm91bmSIAQESOQoVc3VidHlwZVRpbWVMb3JkRG9jdG9yGBMgASgISAxSFXN1YnR5cGVUaW1lTG'
-    '9yZERvY3RvcogBARIhCgl0eXBlUGxhbmUYFCABKAhIDVIJdHlwZVBsYW5liAEBQg0KC19zY3J5'
-    'ZmFsbElkQgwKCl9jb21tYW5kZXJCFgoUX2NhcmRTZWFyY2hTdHJpbmdBbHRCCQoHX2FydGlzdE'
-    'IHCgVfdGV4dEINCgtfZmxhdm9yTmFtZUIKCghfaXNGdW5ueUIRCg9fa2V5d29yZFBhcnRuZXJC'
-    'GAoWX2tleXdvcmRGcmllbmRzRm9yZXZlckIaChhfa2V5d29yZERvY3RvcnNDb21wYW5pb25CGg'
-    'oYX2tleXdvcmRDaG9vc2VCYWNrZ3JvdW5kQhQKEl9zdWJ0eXBlQmFja2dyb3VuZEIYChZfc3Vi'
-    'dHlwZVRpbWVMb3JkRG9jdG9yQgwKCl90eXBlUGxhbmU=');
+    '9yZERvY3RvcogBARIhCgl0eXBlUGxhbmUYFCABKAhIDVIJdHlwZVBsYW5liAEBEhwKCWFydENv'
+    'bG9ycxgVIAMoDVIJYXJ0Q29sb3JzQg0KC19zY3J5ZmFsbElkQgwKCl9jb21tYW5kZXJCFgoUX2'
+    'NhcmRTZWFyY2hTdHJpbmdBbHRCCQoHX2FydGlzdEIHCgVfdGV4dEINCgtfZmxhdm9yTmFtZUIK'
+    'CghfaXNGdW5ueUIRCg9fa2V5d29yZFBhcnRuZXJCGAoWX2tleXdvcmRGcmllbmRzRm9yZXZlck'
+    'IaChhfa2V5d29yZERvY3RvcnNDb21wYW5pb25CGgoYX2tleXdvcmRDaG9vc2VCYWNrZ3JvdW5k'
+    'QhQKEl9zdWJ0eXBlQmFja2dyb3VuZEIYChZfc3VidHlwZVRpbWVMb3JkRG9jdG9yQgwKCl90eX'
+    'BlUGxhbmU=');
